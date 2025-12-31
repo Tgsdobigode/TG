@@ -1,240 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17842597758"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17842597758');
-    </script>
+<footer class="footer-premium" id="contato" style="background-color: #01050a; padding: 80px 0 40px; border-top: 3px solid #007bbd; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif;">
+    <div class="container" style="max-width: 1300px; margin: 0 auto; padding: 0 40px;">
+        <div class="footer-grid" style="display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.2fr; gap: 40px;">
+            
+            <div class="footer-col">
+                <h3 style="font-size: 22px; margin-bottom: 15px; font-weight: 800;">TechMed <span style="color: #007bbd;">System</span></h3>
+                <p style="color: #94a3b8; font-size: 13px; line-height: 1.6; margin-bottom: 20px;">
+                    Consultoria sênior em TI Hospitalar. Especialistas em sustentação de ERPs e infraestrutura de missão crítica.
+                </p>
+                <div style="font-size: 13px; color: #94a3b8;">
+                    <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: #007bbd; margin-right: 8px;"></i> (11) 98837-2710</p>
+                    <p><i class="fas fa-envelope" style="color: #007bbd; margin-right: 8px;"></i> comercial@techmedsystem.com.br</p>
+                </div>
+            </div>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechMed System | Consultoria Estratégica em TI Hospitalar</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        :root {
-            /* Paleta Azul Profundo e Profissional */
-            --bg-deep: #050a18; /* Azul quase preto, ultra premium */
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --accent: #3b82f6; /* Azul brilhante para botões */
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
-            --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+            <div class="footer-col">
+                <h4 style="font-size: 13px; text-transform: uppercase; color: #007bbd; letter-spacing: 2px; margin-bottom: 25px; font-weight: 800;">Tecnologia</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">
+                        <a href="https://www.office.com/" target="_blank" style="text-decoration: none; color: #94a3b8; font-size: 14px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fab fa-microsoft"></i> Microsoft Office 365
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="https://www.kaspersky.com.br/" target="_blank" style="text-decoration: none; color: #94a3b8; font-size: 14px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-shield-alt"></i> Kaspersky Security
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+            <div class="footer-col">
+                <h4 style="font-size: 13px; text-transform: uppercase; color: #007bbd; letter-spacing: 2px; margin-bottom: 25px; font-weight: 800;">Legal</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;">
+                        <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" target="_blank" style="text-decoration: none; color: #94a3b8; font-size: 14px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-gavel"></i> Central LGPD
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <a href="#" style="text-decoration: none; color: #94a3b8; font-size: 14px;">Termos de Uso</a>
+                    </li>
+                </ul>
+            </div>
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
-
-        /* --- BACKGROUND DECOR --- */
-        .glow {
-            position: absolute; width: 40vw; height: 40vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-            top: -10%; right: -5%; z-index: -1;
-        }
-
-        /* --- HEADER --- */
-        header {
-            padding: 25px 0;
-            border-bottom: 1px solid var(--border);
-            background: rgba(5, 10, 24, 0.8);
-            backdrop-filter: blur(15px);
-            position: sticky; top: 0; z-index: 1000;
-        }
-
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        
-        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-icon { 
-            width: 40px; height: 40px; background: var(--accent); border-radius: 10px; 
-            display: grid; place-items: center; position: relative;
-        }
-        .brand-icon i.fa-gear { color: white; font-size: 22px; animation: spin 20s linear infinite; }
-        .brand-icon i.fa-plus { position: absolute; color: var(--bg-deep); font-size: 10px; font-weight: 900; }
-        
-        .brand-text h1 { font-size: 20px; font-weight: 800; color: white; letter-spacing: -0.5px; line-height: 1; }
-        .brand-text span { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: 3px; }
-
-        /* --- HERO --- */
-        .hero { padding: 120px 0 80px; text-align: center; }
-        .badge {
-            display: inline-block; padding: 8px 16px; border-radius: 100px;
-            background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);
-            color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 30px;
-        }
-        .hero h2 { font-size: clamp(36px, 6vw, 68px); font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
-        .hero p { font-size: 20px; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px; }
-
-        /* --- BOTOES FLUIDOS (SEM BORDAS) --- */
-        .btn {
-            padding: 18px 40px; border-radius: 12px; font-size: 16px; font-weight: 700;
-            text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
-            display: inline-block;
-        }
-        .btn-primary { 
-            background: var(--accent); color: white;
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
-        }
-        .btn-primary:hover { transform: translateY(-5px); background: #2563eb; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
-
-        .btn-text { background: transparent; color: white; display: flex; align-items: center; gap: 10px; margin-top: 20px; justify-content: center; }
-        .btn-text:hover { color: var(--accent); }
-
-        /* --- CARDS E GRID --- */
-        .section { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h3 { font-size: 32px; font-weight: 800; }
-
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
-        .card {
-            background: var(--bg-card); padding: 45px; border-radius: 24px;
-            border: 1px solid var(--border); transition: var(--transition);
-        }
-        .card:hover { 
-            background: rgba(255,255,255,0.06); transform: translateY(-10px); 
-            border-color: rgba(59, 130, 246, 0.5);
-        }
-        .card-icon { 
-            width: 54px; height: 54px; background: rgba(59, 130, 246, 0.1); 
-            border-radius: 12px; display: grid; place-items: center; 
-            color: var(--accent); font-size: 24px; margin-bottom: 30px;
-        }
-        .card h4 { font-size: 20px; margin-bottom: 15px; font-weight: 700; }
-        .card p { color: var(--text-dim); font-size: 15px; line-height: 1.7; }
-
-        /* --- FOOTER --- */
-        footer { border-top: 1px solid var(--border); padding: 80px 0 40px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-bottom: 60px; }
-        .footer-brand h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
-        .footer-brand p { color: var(--text-dim); max-width: 450px; font-size: 15px; }
-        .footer-info h5 { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; }
-        .footer-item { margin-bottom: 15px; color: var(--text-dim); font-size: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-item i { color: var(--accent); }
-
-        /* --- WHATSAPP --- */
-        .whatsapp-btn {
-            position: fixed; bottom: 40px; right: 40px; 
-            background: #22c55e; color: white; padding: 16px 28px; 
-            border-radius: 50px; text-decoration: none; font-weight: 700; 
-            display: flex; align-items: center; gap: 12px; z-index: 2000;
-            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3); transition: var(--transition);
-        }
-        .whatsapp-btn:hover { transform: translateY(-5px) scale(1.05); }
-
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-        @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .hero h2 { font-size: 42px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="glow"></div>
-
-    <header>
-        <div class="container nav-flex">
-            <a href="#" class="brand">
-                <div class="brand-icon"><i class="fa-solid fa-gear"></i><i class="fa-solid fa-plus"></i></div>
-                <div class="brand-text"><h1>TECHMED</h1><span>SYSTEM</span></div>
-            </a>
-            <div style="font-size: 14px; font-weight: 600; color: var(--text-dim);" class="desktop-only">
-                TI Consultiva para Saúde
+            <div class="footer-col" style="text-align: right;">
+                <h4 style="font-size: 13px; text-transform: uppercase; color: #22c55e; letter-spacing: 2px; margin-bottom: 25px; font-weight: 800;">Conversão</h4>
+                <a href="https://br.kommo.com/" target="_blank" style="display: block; background: #007bbd; color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center; margin-bottom: 10px; transition: 0.3s;">
+                    <i class="fas fa-calendar-check"></i> AGENDAMENTO INTELIGENTE
+                </a>
+                <a href="https://wa.me/11988372710" target="_blank" style="display: block; background: #22c55e; color: #fff; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center;">
+                    <i class="fab fa-whatsapp"></i> FALAR COM CONSULTOR
+                </a>
             </div>
         </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="badge">Especialistas em Sistemas Hospitalares</div>
-            <h2>Infraestrutura robusta para quem cuida da vida.</h2>
-            <p>Consultoria estratégica de TI focada em sustentação de ERPs, segurança de dados e alta disponibilidade para hospitais e clínicas de alto padrão.</p>
-            <div class="btn-group">
-                <a href="https://wa.me/11988372710" class="btn btn-primary">Falar com Consultor Sênior</a>
-                <a href="#solucoes" class="btn btn-text">Conhecer Soluções <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+        <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #4b5563;">
+            <p>© 2025 TechMed System. Todos os direitos reservados.</p>
+            <p>CNPJ: 60.069.954/0001-82 | Campinas - SP</p>
         </div>
-    </section>
-
-    <section id="solucoes" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h3>Serviços de Alta Complexidade</h3>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h4>Especialistas em ERP</h4>
-                    <p>Suporte e implementação avançada em sistemas MV Soul, Tasy e Pixeon. Garantimos que sua gestão financeira e clínica nunca pare.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
-                    <h4>Governança & LGPD</h4>
-                    <p>Blindagem de dados sensíveis e adequação total à LGPD, protegendo o prontuário dos pacientes e a reputação da sua marca.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
-                    <h4>Suporte Crítico 24/7</h4>
-                    <p>Monitoramento proativo on-site e remoto. Resolvemos incidentes complexos antes mesmo de afetarem a operação do hospital.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                    <h4>Disaster Recovery</h4>
-                    <p>Planos de backup imutável e recuperação rápida contra ataques de ransomware ou falhas físicas de hardware.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h4>Redes Médicas</h4>
-                    <p>Projetamos topologias de rede de alta performance para suporte à vida e transmissão rápida de exames de imagem (PACS).</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h4>Auditoria de TI</h4>
-                    <p>Análise técnica completa para redução de custos com infraestrutura e melhoria da eficiência tecnológica hospitalar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>TECHMED SYSTEM</h2>
-                    <p>Consultoria de TI focada exclusivamente no setor da saúde. Unimos tecnologia e medicina para criar fluxos operacionais eficientes e seguros.</p>
-                    <p style="margin-top: 30px; font-size: 12px; opacity: 0.4;">CNPJ: 60.069.954/0001-82 | MEDTECH SYSTEM LTDA</p>
-                </div>
-                <div class="footer-info">
-                    <h5>Contato & Sede</h5>
-                    <div class="footer-item"><i class="fa-solid fa-phone"></i> +55 (11) 98837-2710</div>
-                    <div class="footer-item"><i class="fa-solid fa-envelope"></i> comercial@techmedsystem.com.br</div>
-                    <div class="footer-item"><i class="fa-solid fa-location-dot"></i> Campinas - SP</div>
-                </div>
-            </div>
-            <div style="text-align: center; color: var(--text-dim); font-size: 13px; padding-top: 30px; border-top: 1px solid var(--border);">
-                &copy; 2025 TechMed System. Excelência em Tecnologia Hospitalar.
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/11988372710" class="whatsapp-btn" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i> Atendimento Especializado
-    </a>
-
-</body>
-</html>
+    </div>
+</footer>
