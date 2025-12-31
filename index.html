@@ -1,685 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17842597758"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17842597758');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechMed System Soluções em TI para Clínicas e Hospitais</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>TechMed System | Consultoria Estratégica em TI Hospitalar</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
+        :root {
+            /* Paleta Azul Profundo e Profissional */
+            --bg-deep: #050a18; /* Azul quase preto, ultra premium */
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --accent: #3b82f6; /* Azul brilhante para botões */
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+
+        /* --- BACKGROUND DECOR --- */
+        .glow {
+            position: absolute; width: 40vw; height: 40vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            top: -10%; right: -5%; z-index: -1;
         }
+
+        /* --- HEADER --- */
         header {
-            background-color: #ffffff;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+            background: rgba(5, 10, 24, 0.8);
+            backdrop-filter: blur(15px);
+            position: sticky; top: 0; z-index: 1000;
         }
-        .logo-container {
-            text-align: center;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
+
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
         
-        /* ESTILO DO LOGOTIPO CORRIGIDO COM FONT AWESOME */
-        .icon-logo-fa {
-            position: relative;
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-icon { 
+            width: 40px; height: 40px; background: var(--accent); border-radius: 10px; 
+            display: grid; place-items: center; position: relative;
+        }
+        .brand-icon i.fa-gear { color: white; font-size: 22px; animation: spin 20s linear infinite; }
+        .brand-icon i.fa-plus { position: absolute; color: var(--bg-deep); font-size: 10px; font-weight: 900; }
+        
+        .brand-text h1 { font-size: 20px; font-weight: 800; color: white; letter-spacing: -0.5px; line-height: 1; }
+        .brand-text span { font-size: 10px; color: var(--accent); font-weight: 700; letter-spacing: 3px; }
+
+        /* --- HERO --- */
+        .hero { padding: 120px 0 80px; text-align: center; }
+        .badge {
+            display: inline-block; padding: 8px 16px; border-radius: 100px;
+            background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2);
+            color: var(--accent); font-size: 12px; font-weight: 700; margin-bottom: 30px;
+        }
+        .hero h2 { font-size: clamp(36px, 6vw, 68px); font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        .hero p { font-size: 20px; color: var(--text-dim); max-width: 800px; margin: 0 auto 50px; }
+
+        /* --- BOTOES FLUIDOS (SEM BORDAS) --- */
+        .btn {
+            padding: 18px 40px; border-radius: 12px; font-size: 16px; font-weight: 700;
+            text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
             display: inline-block;
-            width: 45px;
-            height: 45px;
-            margin-right: 10px;
         }
+        .btn-primary { 
+            background: var(--accent); color: white;
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-5px); background: #2563eb; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
 
-        .icon-logo-fa .fa-gear {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 45px;
-            color: #002D5B;
-            animation: spin 8s linear infinite;
-            z-index: 1;
-        }
+        .btn-text { background: transparent; color: white; display: flex; align-items: center; gap: 10px; margin-top: 20px; justify-content: center; }
+        .btn-text:hover { color: var(--accent); }
 
-        .icon-logo-fa .fa-plus {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 25px;
-            color: #007bff;
-            z-index: 2;
-        }
+        /* --- CARDS E GRID --- */
+        .section { padding: 100px 0; }
+        .section-title { text-align: center; margin-bottom: 70px; }
+        .section-title h3 { font-size: 32px; font-weight: 800; }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .card {
+            background: var(--bg-card); padding: 45px; border-radius: 24px;
+            border: 1px solid var(--border); transition: var(--transition);
         }
+        .card:hover { 
+            background: rgba(255,255,255,0.06); transform: translateY(-10px); 
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .card-icon { 
+            width: 54px; height: 54px; background: rgba(59, 130, 246, 0.1); 
+            border-radius: 12px; display: grid; place-items: center; 
+            color: var(--accent); font-size: 24px; margin-bottom: 30px;
+        }
+        .card h4 { font-size: 20px; margin-bottom: 15px; font-weight: 700; }
+        .card p { color: var(--text-dim); font-size: 15px; line-height: 1.7; }
 
-        .logo {
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            font-weight: 700;
-            color: #002D5B;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .logo span {
-            display: block;
-            font-size: 18px;
-            font-weight: 400;
-            color: #555;
-            letter-spacing: 1px;
-            margin-top: 5px;
-        }
-        nav {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-left: 30px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #007bff;
-        }
-        
-        /* Botão WhatsApp flutuante no canto inferior direito */
-        .whatsapp-button-fixed {
-            position: fixed; 
-            bottom: 25px; 
-            right: 25px; 
-            background-color: #28a745;
-            padding: 12px 20px; 
-            border-radius: 50px; 
-            text-decoration: none;
-            font-weight: 700;
-            z-index: 1000; 
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            transition: background-color 0.3s ease;
-        }
-        .whatsapp-button-fixed a {
-            color: #ffffff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .whatsapp-button-fixed:hover {
-            background-color: #218838;
-        }
+        /* --- FOOTER --- */
+        footer { border-top: 1px solid var(--border); padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-bottom: 60px; }
+        .footer-brand h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
+        .footer-brand p { color: var(--text-dim); max-width: 450px; font-size: 15px; }
+        .footer-info h5 { color: var(--accent); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; }
+        .footer-item { margin-bottom: 15px; color: var(--text-dim); font-size: 15px; display: flex; align-items: center; gap: 10px; }
+        .footer-item i { color: var(--accent); }
 
-        .hero {
-            background-color: #e9ecef;
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid #dee2e6;
+        /* --- WHATSAPP --- */
+        .whatsapp-btn {
+            position: fixed; bottom: 40px; right: 40px; 
+            background: #22c55e; color: white; padding: 16px 28px; 
+            border-radius: 50px; text-decoration: none; font-weight: 700; 
+            display: flex; align-items: center; gap: 12px; z-index: 2000;
+            box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3); transition: var(--transition);
         }
-        .hero h1 {
-            font-size: 3em;
-            color: #002D5B;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            color: #555;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-right: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .btn-secondary {
-            background-color: #6c757d;
-            color: #ffffff;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: #5a6268;
-        }
-        
-        /* ESTILO PARA A SEÇÃO DE SOLUÇÕES EM TI */
-        .solutions-section {
-            padding: 60px 0;
-            background-color: #f1f7fe;
-            border-bottom: 1px solid #d1e7ff;
-            text-align: center;
-        }
-        .solutions-section h2 {
-            font-size: 2.5em;
-            color: #002D5B;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        .solutions-section p {
-            font-size: 1.2em;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        /* NOVO ESTILO PARA SERVIÇOS ESSENCIAIS (Atendimento) */
-        .essential-services {
-            padding: 60px 0;
-            background-color: #ffffff;
-            border-bottom: 1px solid #dee2e6;
-            text-align: center;
-        }
-        .essential-services h2 {
-            font-size: 2.5em;
-            color: #002D5B;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .service-card {
-            background-color: #f8f9fa;
-            border: 1px solid #ced4da;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            flex: 1 1 300px;
-            max-width: 350px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-        .service-card h3 {
-            color: #007bff;
-            font-size: 1.5em;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        .service-card p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #555;
-            text-align: left;
-        }
-        
-        /* ESTILO PARA A NOVA SEÇÃO DE SERVIÇOS DETALHADOS (Infraestrutura) */
-        .detailed-services {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
+        .whatsapp-btn:hover { transform: translateY(-5px) scale(1.05); }
 
-        .detailed-services h2 {
-            font-size: 2.5em;
-            color: #002D5B;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .service-item {
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #007bff;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-item h3 {
-            color: #002D5B;
-            font-size: 1.4em;
-            margin-top: 0;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-        }
-
-        .service-item p {
-            font-size: 1em;
-            color: #555;
-            line-height: 1.6;
-        }
-        /* FIM DO ESTILO DA SEÇÃO DETALHADA */
-
-
-        .features {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .features h2 {
-            text-align: center;
-            font-size: 2.5em;
-            color: #002D5B;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-        .features ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        .features ul li {
-            background-color: #ffffff;
-            border: 1px solid #d1e7ff;
-            padding: 20px 30px;
-            margin: 10px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            color: #333;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            text-align: center;
-            flex: 1 1 300px; 
-            max-width: 350px;
-        }
-        
-        .call-to-action {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #e9ecef;
-            border-top: 1px solid #d1e7ff;
-        }
-        .call-to-action h3 {
-            font-size: 1.8em;
-            color: #002D5B;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        .form-section {
-            padding: 60px 0;
-            background-color: #ffffff;
-        }
-        .form-section h2 {
-            text-align: center;
-            font-size: 2.5em;
-            color: #002D5B;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-        .contact-form {
-            background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .contact-form label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            color: #343a40;
-        }
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            width: calc(100% - 22px);
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-        .contact-form input[type="submit"] {
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-        .contact-form input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        
-        /* ESTILOS DO NOVO RODAPÉ COM INFORMAÇÕES DA EMPRESA */
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .footer-info {
-            margin-bottom: 15px;
-            font-size: 1em;
-        }
-        .footer-contact {
-            margin-bottom: 15px;
-            font-size: 1em;
-        }
-        footer .fa-solid, footer .fa-brands {
-            color: #007bff;
-        }
-        .footer-info p, .footer-contact p {
-            justify-content: center;
-        }
-        /* FIM ESTILOS RODAPÉ */
-
-        /* Estilos responsivos */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .btn-primary, .btn-secondary {
-                padding: 12px 20px;
-                margin-right: 10px;
-                display: block;
-                width: calc(100% - 20px);
-                margin: 10px auto;
-            }
-            nav {
-                position: static;
-                transform: none;
-                width: 100%;
-                margin-top: 15px;
-            }
-            nav ul {
-                justify-content: center;
-            }
-            nav ul li {
-                margin: 0 15px;
-            }
-            
-            header {
-                flex-direction: column;
-                padding: 15px 0 25px 0;
-            }
-            .features ul li {
-                max-width: 100%;
-            }
-            .contact-form {
-                padding: 25px;
-            }
-
-            .logo-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .logo {
-                display: flex;
-                align-items: center;
-            }
-            .icon-logo-fa {
-                margin-right: 5px;
-            }
-            
-            .service-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            footer p {
-                /* No mobile, as informações de contato podem quebrar a linha, forçando o alinhamento à esquerda para melhor leitura */
-                justify-content: flex-start;
-                padding-left: 20px; 
-            }
-        }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .features h2, .form-section h2, .solutions-section h2, .essential-services h2, .detailed-services h2 {
-                font-size: 2em;
-            }
-            nav ul li {
-                margin: 0 8px;
-            }
-            .service-card {
-                max-width: 100%;
-            }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 42px; }
         }
     </style>
 </head>
 <body>
+
+    <div class="glow"></div>
+
     <header>
-        <div class="logo-container">
-            <div class="logo">
-                <div class="icon-logo-fa">
-                    <i class="fa-solid fa-gear"></i>
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-                TECHMED
+        <div class="container nav-flex">
+            <a href="#" class="brand">
+                <div class="brand-icon"><i class="fa-solid fa-gear"></i><i class="fa-solid fa-plus"></i></div>
+                <div class="brand-text"><h1>TECHMED</h1><span>SYSTEM</span></div>
+            </a>
+            <div style="font-size: 14px; font-weight: 600; color: var(--text-dim);" class="desktop-only">
+                TI Consultiva para Saúde
             </div>
-            <span>SYSTEM</span>
-            <p>Tecnologia que cuida da saúde do seu negócio</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#solucoes">Soluções</a></li> 
-                <li><a href="#servicos-essenciais">Atendimento</a></li>
-                <li><a href="#servicos-detalhados">Infraestrutura</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Soluções completas de TI para clínicas e hospitais</h1>
-            <p>Suporte técnico, análise e auditoria de sistemas hospitalares, venda e implementação de ERP hospitalar, segurança, automação de agendamento e chatbots, e manutenção de sites – com foco em disponibilidade, segurança e conformidade.</p>
-            <a href="#contato" class="btn-primary">Solicitar Proposta</a>
-            <a href="#servicos-essenciais" class="btn-secondary">Ver Serviços</a>
-        </div>
-    </section>
-
-    <section id="solucoes" class="solutions-section">
-        <div class="container">
-            <h2>Nossas Soluções</h2>
-            <p>
-                A **TechMed System** entrega soluções de TI completas, garantindo o melhor da tecnologia, para que você tenha sempre o que há de mais inovador para apoiar e alavancar seus negócios.
-            </p>
-        </div>
-    </section>
-
-    <section id="servicos-essenciais" class="essential-services">
-        <div class="container">
-            <h2>Serviços de Atendimento e Software (Essenciais)</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <h3>Agilidade no Agendamento 📅</h3>
-                    <p>Sistemas que otimizam o fluxo de marcações, reduzem a taxa de não comparecimento (no-show) e liberam sua equipe da recepção para focar no atendimento ao paciente.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Prontuário Eletrônico (PEP) & ERPs 💻</h3>
-                    <p>Especialistas na **implementação, suporte e auditoria** de sistemas líderes de mercado como **MV Soul, Tasy (Philips) e Pixeon**. Garantimos a integração perfeita do PEP e a gestão completa do seu ERP hospitalar.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Segurança de Dados (LGPD) 🔒</h3>
-                    <p>Consultoria e implementação de infraestrutura com foco em criptografia, backup em nuvem e políticas de acesso que garantem a conformidade total com a Lei Geral de Proteção de Dados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="servicos-detalhados" class="detailed-services">
-        <div class="container">
-            <h2>Suporte Técnico e Infraestrutura Detalhada</h2>
-            
-            <div class="service-grid">
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-headset"></i> Suporte Técnico Especializado</h3>
-                    <p>Atendimento rápido e eficiente para problemas de hardware, software e rede. Suporte **on-site e remoto** com foco na continuidade dos serviços críticos de clínicas e hospitais.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-server"></i> Gerenciamento de Infraestrutura</h3>
-                    <p>Monitoramento proativo e manutenção de servidores, roteadores e sistemas de TI. Garantimos o **desempenho máximo** e a **estabilidade** da sua rede interna.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-shield-halved"></i> Segurança e Firewall</h3>
-                    <p>Implementação de soluções de segurança de ponta, incluindo firewalls, antivírus corporativo e políticas de acesso, protegendo os dados sensíveis dos pacientes contra ameaças.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-cloud-arrow-up"></i> Backup e Recuperação de Dados</h3>
-                    <p>Estratégias robustas de backup em nuvem e local, garantindo a **recuperação rápida** e a **disponibilidade total** dos dados em caso de falhas ou desastres. Em conformidade com LGPD.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-gauge-high"></i> Otimização de Sistemas</h3>
-                    <p>Análise e otimização de sistemas operacionais e aplicações, como o seu ERP/PEP. Reduzimos lentidão e erros, melhorando a **produtividade** de toda a equipe médica e administrativa.</p>
-                </div>
-                
-                <div class="service-item">
-                    <h3><i class="fa-solid fa-laptop-medical"></i> Manutenção de Hardware</h3>
-                    <p>Serviços de manutenção preventiva e corretiva para computadores, impressoras e equipamentos médicos com interface de TI, prolongando sua vida útil e evitando interrupções.</p>
-                </div>
-                
+            <div class="badge">Especialistas em Sistemas Hospitalares</div>
+            <h2>Infraestrutura robusta para quem cuida da vida.</h2>
+            <p>Consultoria estratégica de TI focada em sustentação de ERPs, segurança de dados e alta disponibilidade para hospitais e clínicas de alto padrão.</p>
+            <div class="btn-group">
+                <a href="https://wa.me/11988372710" class="btn btn-primary">Falar com Consultor Sênior</a>
+                <a href="#solucoes" class="btn btn-text">Conhecer Soluções <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <section id="diferenciais" class="features">
+    <section id="solucoes" class="section">
         <div class="container">
-            <h2>Outros Diferenciais de Suporte</h2>
-            <ul>
-                <li>SLA personalizado e planos mensais</li>
-                <li>Instalação, integração e treinamento de sistemas</li>
-                <li>Atendimento remoto e presencial</li>
-                <li>Consultoria em ERP/EHR Hospitalar</li>
-            </ul>
-            <div class="call-to-action">
-                <h3>Solicite um diagnóstico inicial gratuito!</h3>
+            <div class="section-title">
+                <h3>Serviços de Alta Complexidade</h3>
             </div>
-        </div>
-    </section>
-
-    <section id="contato" class="form-section">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <div class="contact-form">
-                <form action="#" method="POST">
-                    <label for="nome">Nome / Clínica:</label>
-                    <input type="text" id="nome" name="nome" required>
-
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone">
-
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
-
-                    <input type="submit" value="Enviar Mensagem">
-                </form>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h4>Especialistas em ERP</h4>
+                    <p>Suporte e implementação avançada em sistemas MV Soul, Tasy e Pixeon. Garantimos que sua gestão financeira e clínica nunca pare.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h4>Governança & LGPD</h4>
+                    <p>Blindagem de dados sensíveis e adequação total à LGPD, protegendo o prontuário dos pacientes e a reputação da sua marca.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h4>Suporte Crítico 24/7</h4>
+                    <p>Monitoramento proativo on-site e remoto. Resolvemos incidentes complexos antes mesmo de afetarem a operação do hospital.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h4>Disaster Recovery</h4>
+                    <p>Planos de backup imutável e recuperação rápida contra ataques de ransomware ou falhas físicas de hardware.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h4>Redes Médicas</h4>
+                    <p>Projetamos topologias de rede de alta performance para suporte à vida e transmissão rápida de exames de imagem (PACS).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h4>Auditoria de TI</h4>
+                    <p>Análise técnica completa para redução de custos com infraestrutura e melhoria da eficiência tecnológica hospitalar.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-info">
-                <p><strong>MEDTECH SYSTEM LTDA</strong></p>
-                <p>CNPJ: 60.069.954/0001-82 | Inscrição Estadual: Isento</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>TECHMED SYSTEM</h2>
+                    <p>Consultoria de TI focada exclusivamente no setor da saúde. Unimos tecnologia e medicina para criar fluxos operacionais eficientes e seguros.</p>
+                    <p style="margin-top: 30px; font-size: 12px; opacity: 0.4;">CNPJ: 60.069.954/0001-82 | MEDTECH SYSTEM LTDA</p>
+                </div>
+                <div class="footer-info">
+                    <h5>Contato & Sede</h5>
+                    <div class="footer-item"><i class="fa-solid fa-phone"></i> +55 (11) 98837-2710</div>
+                    <div class="footer-item"><i class="fa-solid fa-envelope"></i> comercial@techmedsystem.com.br</div>
+                    <div class="footer-item"><i class="fa-solid fa-location-dot"></i> Campinas - SP</div>
+                </div>
             </div>
-            
-            <div class="footer-contact">
-                <p><i class="fa-solid fa-phone-volume"></i> +55 (11) 9 8837-2710</p>
-                <p><i class="fa-solid fa-location-dot"></i> Rua Jutaí, nº 438, sala 02 - Jardim Ouro Verde - Campinas - SP</p>
+            <div style="text-align: center; color: var(--text-dim); font-size: 13px; padding-top: 30px; border-top: 1px solid var(--border);">
+                &copy; 2025 TechMed System. Excelência em Tecnologia Hospitalar.
             </div>
-
-            <hr style="border-color: #555; margin: 15px 0;">
-
-            <p>&copy; 2023 MEDTECH SYSTEM LTDA. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <div class="whatsapp-button-fixed">
-        <a href="https://wa.me/11988372710" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    </div>
+    <a href="https://wa.me/11988372710" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Atendimento Especializado
+    </a>
+
 </body>
 </html>
-
-
