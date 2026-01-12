@@ -1,255 +1,305 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17842597758"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17842597758');
-    </script>
+<meta charset="UTF-8">
+<title>TechMed System | Terceirização e Suporte de TI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechMed System | Consultoria Estratégica em TI Hospitalar</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-blue: #007bbd;
-            --dark-blue: #050f1e;
-            --white: #ffffff;
-            --text-muted: #cbd5e1;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+<style>
+:root{
+  --blue:#007bbd;
+  --dark:#050f1e;
+  --light:#cbd5e1;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--dark-blue);
-            color: var(--white);
-            line-height: 1.6;
-        }
+*{margin:0;padding:0;box-sizing:border-box}
 
-        header {
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            padding: 15px 0; background: rgba(5, 15, 30, 0.98);
-            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .brand { text-decoration: none; color: white; }
-        .brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -1px; }
-        .brand span { font-size: 10px; color: var(--primary-blue); font-weight: 700; letter-spacing: 3px; display: block; text-transform: uppercase; }
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--dark);
+  color:#fff;
+}
 
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: white; font-size: 12px; font-weight: 700; text-transform: uppercase; opacity: 0.8; transition: var(--transition); }
-        nav ul li a:hover { opacity: 1; color: var(--primary-blue); }
+a{text-decoration:none;color:inherit}
 
-        /* --- HERO SPLIT --- */
-        .hero-split { display: flex; height: 100vh; width: 100%; border-bottom: 4px solid var(--primary-blue); }
-        .hero-left { 
-            width: 45%; background: linear-gradient(135deg, #004e7a, #007bbd); 
-            display: flex; flex-direction: column; justify-content: center; 
-            padding: 0 5% 0 8%; z-index: 2;
-        }
-        .hero-right { width: 55%; background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000') center/cover; }
-        .hero-left h2 { font-size: clamp(35px, 5vw, 55px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-        .badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:0 40px;
+}
 
-        /* --- SEÇÕES --- */
-        .section-visual {
-            padding: 100px 0;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-        .section-visual::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 15, 30, 0.9);
-        }
-        .visual-content { position: relative; z-index: 5; width: 100%; }
-        
-        .section-header { margin-bottom: 50px; }
-        .section-header h3 { font-size: 40px; font-weight: 800; color: var(--primary-blue); }
-        .section-header p { font-size: 18px; color: var(--text-muted); max-width: 800px; }
+header{
+  position:fixed;
+  top:0;width:100%;
+  background:rgba(5,15,30,.95);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  z-index:1000;
+}
 
-        .grid-info { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 25px; 
-        }
+header .flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
 
-        .card-modern {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid var(--primary-blue);
-            padding: 35px;
-            border-radius: 0 15px 15px 0;
-            transition: var(--transition);
-        }
-        .card-modern:hover { background: rgba(255,255,255,0.07); transform: scale(1.02); }
-        
-        .card-modern h4 { font-size: 22px; font-weight: 800; margin-bottom: 20px; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        .card-modern ul { list-style: none; }
-        .card-modern ul li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; color: var(--text-muted); }
-        .card-modern ul li i { color: var(--primary-blue); margin-top: 4px; font-size: 14px; }
-        .card-modern ul li strong { color: var(--white); }
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+  font-size:13px;
+  font-weight:700;
+}
 
-        /* --- IMAGENS DE FUNDO --- */
-        #empresa { background-image: url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2000'); }
-        #solucoes { background-image: url('https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2000'); }
+nav a:hover{color:var(--blue)}
 
-        footer { padding: 60px 0; background: #020610; border-top: 2px solid var(--primary-blue); }
-        .wa-float { position: fixed; bottom: 40px; right: 40px; background: #22c55e; color: white; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+.hero{
+  display:flex;
+  height:100vh;
+  margin-top:70px;
+}
 
-        @media (max-width: 992px) {
-            .hero-split { flex-direction: column; }
-            .hero-left, .hero-right { width: 100%; height: 50vh; }
-        }
-    </style>
+.hero-left{
+  width:45%;
+  padding:8%;
+  background:linear-gradient(135deg,#004e7a,#007bbd);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-right{
+  width:55%;
+  background:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+}
+
+.badge{
+  background:rgba(255,255,255,.2);
+  padding:6px 16px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:20px;
+  width:fit-content;
+}
+
+h1{font-size:48px;margin-bottom:20px}
+h2{font-size:38px;color:var(--blue);margin-bottom:15px}
+h3{margin-bottom:10px}
+
+p{color:var(--light);line-height:1.6}
+
+.btn{
+  margin-top:30px;
+  background:#fff;
+  color:#000;
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:800;
+  width:fit-content;
+}
+
+section{
+  padding:120px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.bg-watermark::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:.08;
+  z-index:0;
+}
+
+.bg-servicos::before{
+  background-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=80");
+}
+
+.bg-infra::before{
+  background-image:url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80");
+}
+
+.content{
+  position:relative;
+  z-index:2;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(255,255,255,.06);
+  padding:30px;
+  border-radius:14px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.1);
+}
+
+.card i{
+  font-size:28px;
+  color:var(--blue);
+  margin-bottom:15px;
+}
+
+footer{
+  padding:50px 0;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  font-size:14px;
+  color:#94a3b8;
+}
+
+.whatsapp-float{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 22px;
+  border-radius:50px;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+  z-index:2000;
+}
+
+@media(max-width:900px){
+  .hero{flex-direction:column}
+  .hero-left,.hero-right{width:100%;height:50vh}
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container nav-flex">
-            <a href="#" class="brand"><h1>TECHMED</h1><span>SYSTEM</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#empresa">A TechMed</a></li>
-                    <li><a href="#solucoes">Sistemas & Integrações</a></li>
-                    <li><a href="#infra">Infra & Proteção</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/11988372710" target="_blank" class="btn" style="background:var(--primary-blue); color:white; padding:10px 18px; border-radius:4px; text-decoration:none; font-weight:700; font-size:11px;">AVALIAÇÃO GRATUITA</a>
-        </div>
-    </header>
+<header>
+  <div class="container flex">
+    <strong>TechMed System</strong>
+    <nav>
+      <ul>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#infra">Infraestrutura</a></li>
+        <li><a href="#parcerias">Parcerias</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <main class="hero-split">
-        <section class="hero-left">
-            <div class="badge">10+ Anos de Excelência na Saúde</div>
-            <h2>TI de Alta Performance para o Setor Médico</h2>
-            <p>Do consultório ao hospital de alta complexidade. Consultoria sênior em sistemas, infraestrutura crítica e interoperabilidade.</p>
-        </section>
-        <section class="hero-right"></section>
-    </main>
-
-    <section id="empresa" class="section-visual">
-        <div class="container visual-content">
-            <div class="section-header">
-                <h3>Nossa Atuação</h3>
-                <p>Soluções escaláveis que respeitam o porte e a necessidade de cada instituição.</p>
-            </div>
-            <div class="grid-info">
-                <div class="card-modern">
-                    <h4>Hospitais</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-hospital"></i> <strong>Missão Crítica:</strong> Garantia de 100% de disponibilidade para UTIs e Centros Cirúrgicos.</li>
-                        <li><i class="fa-solid fa-hospital"></i> <strong>Certificações:</strong> Apoio em processos ONA e HIMSS.</li>
-                    </ul>
-                </div>
-                <div class="card-modern">
-                    <h4>Clínicas e Centros</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-stethoscope"></i> <strong>Eficiência:</strong> Otimização de processos para clínicas de médio e pequeno porte.</li>
-                        <li><i class="fa-solid fa-stethoscope"></i> <strong>Tecnologia de Ponta:</strong> Estrutura de grande hospital acessível ao seu negócio.</li>
-                    </ul>
-                </div>
-                <div class="card-modern">
-                    <h4>Consultórios</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-user-doctor"></i> <strong>Digitalização:</strong> Implementação de prontuários eletrônicos e fluxos sem papel.</li>
-                        <li><i class="fa-solid fa-user-doctor"></i> <strong>Organização:</strong> Apoio em faturamento, cadastro e credenciamento.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solucoes" class="section-visual">
-        <div class="container visual-content">
-            <div class="section-header">
-                <h3>Sistemas & Integrações</h3>
-                <p>Conectividade total entre a gestão e o diagnóstico.</p>
-            </div>
-            <div class="grid-info">
-                <div class="card-modern">
-                    <h4>ERPs Hospitalares</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> <strong>Sistemas:</strong> MV Soul, Philips Tasy, RM TOTVS, Vector e Pixeon.</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Sustentação:</strong> Suporte técnico especializado e parametrização.</li>
-                    </ul>
-                </div>
-                <div class="card-modern">
-                    <h4>Diagnóstico (RIS/LIS)</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-link"></i> <strong>RIS:</strong> Fluxo completo de radiologia.</li>
-                        <li><i class="fa-solid fa-link"></i> <strong>LIS:</strong> Integração laboratorial de ponta.</li>
-                        <li><i class="fa-solid fa-link"></i> <strong>Interoperabilidade:</strong> Conexão nativa HL7 e DICOM.</li>
-                    </ul>
-                </div>
-                <div class="card-modern">
-                    <h4>PACS & Imagem</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-images"></i> <strong>Soluções:</strong> Philips PACS e Suite Pixeon (Korus/Aurora).</li>
-                        <li><i class="fa-solid fa-images"></i> <strong>Performance:</strong> Estações de laudo otimizadas e estáveis.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="infra" class="section-visual" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000');">
-        <div class="container visual-content">
-            <div class="section-header">
-                <h3>Proteção & Infraestrutura</h3>
-                <p>Segurança de dados sensíveis como prioridade máxima.</p>
-            </div>
-            <div class="grid-info">
-                <div class="card-modern">
-                    <h4>Segurança e Backup</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-shield-halved"></i> <strong>Cibersegurança:</strong> Proteção anti-ransomware para prontuários.</li>
-                        <li><i class="fa-solid fa-cloud-arrow-up"></i> <strong>Backup Imutável:</strong> Recuperação de desastres garantida.</li>
-                    </ul>
-                </div>
-                <div class="card-modern">
-                    <h4>Administrativo</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-id-card"></i> <strong>Credenciamento:</strong> Suporte técnico junto a operadoras.</li>
-                        <li><i class="fa-solid fa-database"></i> <strong>Cadastros:</strong> Higienização de bases de faturamento e tabelas.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
-                <div>
-                    <h3 style="color:white; margin-bottom: 20px;">TechMed System</h3>
-                    <p style="color:var(--text-muted);"><i class="fa-solid fa-phone" style="color:var(--primary-blue);"></i> (11) 98837-2710</p>
-                    <p style="color:var(--text-muted); margin-top: 10px;"><i class="fa-solid fa-envelope" style="color:var(--primary-blue);"></i> comercial@techmedsystem.com.br</p>
-                </div>
-                <div style="text-align: right; color: var(--text-muted); font-size: 13px;">
-                    <p>CNPJ: 60.069.954/0001-82 | Campinas - SP</p>
-                    <p>&copy; 2025 TechMed System. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/11988372710" class="wa-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i> Falar com um Consultor Sênior
+<section class="hero">
+  <div class="hero-left">
+    <div class="badge">Terceirização • Suporte • Segurança</div>
+    <h1>TI confiável para empresas que não podem parar</h1>
+    <p>
+      Cansado de problemas com tecnologia? Rede instável, computadores lentos,
+      falhas constantes e falta de suporte não precisam fazer parte da sua rotina.
+      Nós cuidamos da sua TI para que sua empresa opere com estabilidade e segurança.
+    </p>
+    <a class="btn" href="https://wa.me/5511988372710" target="_blank">
+      Solicitar diagnóstico gratuito
     </a>
+  </div>
+  <div class="hero-right"></div>
+</section>
+
+<section id="empresa">
+  <div class="container content">
+    <h2>Quem Somos</h2>
+    <p>
+      A TechMed System atua desde 2015 oferecendo suporte técnico, terceirização
+      e infraestrutura de TI para empresas de diversos segmentos, incluindo
+      ambientes corporativos e hospitalares.
+    </p>
+
+    <div class="grid">
+      <div class="card"><h3>Missão</h3><p>Garantir tecnologia estável, segura e eficiente.</p></div>
+      <div class="card"><h3>Visão</h3><p>Ser referência em gestão e terceirização de TI.</p></div>
+      <div class="card"><h3>Valores</h3><p>Transparência, responsabilidade e compromisso.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="clientes" class="bg-watermark bg-servicos">
+  <div class="container content">
+    <h2>Quem Atendemos</h2>
+    <div class="grid">
+      <div class="card"><i class="fa-solid fa-hospital"></i><h3>Clínicas & Consultórios</h3><p>Ambientes médicos com necessidade de estabilidade e segurança.</p></div>
+      <div class="card"><i class="fa-solid fa-building"></i><h3>Empresas</h3><p>Pequenas e médias empresas de diversos segmentos.</p></div>
+      <div class="card"><i class="fa-solid fa-scale-balanced"></i><h3>Advocacia</h3><p>Proteção de dados e continuidade operacional.</p></div>
+      <div class="card"><i class="fa-solid fa-calculator"></i><h3>Contabilidade</h3><p>Sistemas críticos, servidores e backup confiável.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="bg-watermark bg-servicos">
+  <div class="container content">
+    <h2>Serviços</h2>
+    <div class="grid">
+      <div class="card"><i class="fa-solid fa-users-gear"></i><h3>Terceirização de TI</h3><p>Gestão completa do ambiente de TI.</p></div>
+      <div class="card"><i class="fa-solid fa-headset"></i><h3>Suporte Técnico</h3><p>Computadores lentos, erros e falhas.</p></div>
+      <div class="card"><i class="fa-solid fa-lock"></i><h3>Segurança</h3><p>Antivírus, firewall e proteção de dados.</p></div>
+      <div class="card"><i class="fa-solid fa-chalkboard-user"></i><h3>Treinamento TASY</h3><p>Treinamento para recepção e agendamento sem custos elevados.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="infra" class="bg-watermark bg-infra">
+  <div class="container content">
+    <h2>Infraestrutura</h2>
+    <div class="grid">
+      <div class="card"><i class="fa-solid fa-network-wired"></i><h3>Redes</h3><p>Wi-Fi e cabeamento estruturado.</p></div>
+      <div class="card"><i class="fa-solid fa-server"></i><h3>Servidores</h3><p>Windows Server e virtualização.</p></div>
+      <div class="card"><i class="fa-solid fa-images"></i><h3>PACS</h3><p>Pixeon e Carestream.</p></div>
+      <div class="card"><i class="fa-solid fa-hospital"></i><h3>TASY</h3><p>Assistencial, agendamento e suporte técnico.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="parcerias">
+  <div class="container content">
+    <h2>Parcerias & Tecnologias</h2>
+    <div class="grid">
+      <div class="card"><h3>Kaspersky</h3><p>Proteção corporativa.</p></div>
+      <div class="card"><h3>Bitdefender</h3><p>Segurança endpoint.</p></div>
+      <div class="card"><h3>Locaweb</h3><p>Cloud e e-mail corporativo.</p></div>
+      <div class="card"><h3>Sistemas Hospitalares</h3><p>Experiência prática em ambientes críticos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container content">
+    <h2>Contato</h2>
+    <p>Fale com um especialista e receba um diagnóstico inicial.</p>
+  </div>
+</section>
+
+<footer>
+© 2015 – 2025 TechMed System. Todos os direitos reservados.
+</footer>
+
+<a href="https://wa.me/5511988372710" target="_blank" class="whatsapp-float">
+<i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+</a>
 
 </body>
 </html>
