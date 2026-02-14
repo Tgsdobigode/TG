@@ -1,305 +1,316 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>TechMed System | Terceirização e Suporte de TI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMed System | Consultoria Especializada Tasy e Pixeon</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0088ff;
+            --secondary: #002e5b;
+            --dark: #06090f;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
 
-<style>
-:root{
-  --blue:#007bbd;
-  --dark:#050f1e;
-  --light:#cbd5e1;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-main); background: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, .logo { font-family: 'Montserrat', sans-serif; }
+        img { max-width: 100%; height: auto; border-radius: 20px; }
 
-*{margin:0;padding:0;box-sizing:border-box}
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-body{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  background:var(--dark);
-  color:#fff;
-}
+        /* HEADER */
+        header {
+            padding: 15px 0;
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+            background: rgba(6, 9, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; color: #fff; text-decoration: none; font-weight: 900; }
+        .logo span { color: var(--primary); }
 
-a{text-decoration:none;color:inherit}
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { text-decoration: none; color: var(--text-dim); font-size: 11px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
 
-.container{
-  max-width:1400px;
-  margin:auto;
-  padding:0 40px;
-}
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(6, 9, 15, 0.8), rgba(6, 9, 15, 0.8)), 
+                        url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .hero h1 { font-size: clamp(28px, 5vw, 52px); margin-bottom: 20px; }
+        .hero p { font-size: clamp(16px, 2vw, 19px); color: var(--text-dim); max-width: 800px; margin: 0 auto 30px; }
 
-header{
-  position:fixed;
-  top:0;width:100%;
-  background:rgba(5,15,30,.95);
-  border-bottom:1px solid rgba(255,255,255,.1);
-  z-index:1000;
-}
+        /* SPA CONTENT */
+        .page-content { display: none; padding: 80px 0; }
+        .page-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-header .flex{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 0;
-}
+        /* SECTION TITLES */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 32px; color: var(--primary); margin-bottom: 15px; }
 
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:30px;
-  font-size:13px;
-  font-weight:700;
-}
+        /* CARDS */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 35px;
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .card i { font-size: 35px; color: var(--primary); margin-bottom: 20px; display: block; }
+        .card h3 { margin-bottom: 15px; font-size: 22px; }
+        .card ul { list-style: none; color: var(--text-dim); }
+        .card li { margin-bottom: 10px; font-size: 14px; display: flex; gap: 10px; }
+        .card li::before { content: "✓"; color: var(--primary); font-weight: bold; }
 
-nav a:hover{color:var(--blue)}
+        /* SOBRE NOS */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 
-.hero{
-  display:flex;
-  height:100vh;
-  margin-top:70px;
-}
+        /* BUTTON */
+        .btn-modern {
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(0, 136, 255, 0.3);
+        }
 
-.hero-left{
-  width:45%;
-  padding:8%;
-  background:linear-gradient(135deg,#004e7a,#007bbd);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
+        /* FOOTER */
+        footer {
+            background: #030508;
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 50px;
+        }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--primary); margin-bottom: 25px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-col p, .footer-col li { color: var(--text-dim); font-size: 14px; margin-bottom: 12px; list-style: none; }
+        .footer-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; font-size: 12px; color: var(--text-dim); }
 
-.hero-right{
-  width:55%;
-  background:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
-}
+        /* WHATSAPP */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; text-decoration: none; }
 
-.badge{
-  background:rgba(255,255,255,.2);
-  padding:6px 16px;
-  border-radius:20px;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:20px;
-  width:fit-content;
-}
-
-h1{font-size:48px;margin-bottom:20px}
-h2{font-size:38px;color:var(--blue);margin-bottom:15px}
-h3{margin-bottom:10px}
-
-p{color:var(--light);line-height:1.6}
-
-.btn{
-  margin-top:30px;
-  background:#fff;
-  color:#000;
-  padding:14px 28px;
-  border-radius:8px;
-  font-weight:800;
-  width:fit-content;
-}
-
-section{
-  padding:120px 0;
-  position:relative;
-  overflow:hidden;
-}
-
-.bg-watermark::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:.08;
-  z-index:0;
-}
-
-.bg-servicos::before{
-  background-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=80");
-}
-
-.bg-infra::before{
-  background-image:url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80");
-}
-
-.content{
-  position:relative;
-  z-index:2;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-
-.card{
-  background:rgba(255,255,255,.06);
-  padding:30px;
-  border-radius:14px;
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  background:rgba(255,255,255,.1);
-}
-
-.card i{
-  font-size:28px;
-  color:var(--blue);
-  margin-bottom:15px;
-}
-
-footer{
-  padding:50px 0;
-  border-top:1px solid rgba(255,255,255,.1);
-  text-align:center;
-  font-size:14px;
-  color:#94a3b8;
-}
-
-.whatsapp-float{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background:#25d366;
-  color:#fff;
-  padding:16px 22px;
-  border-radius:50px;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-  z-index:2000;
-}
-
-@media(max-width:900px){
-  .hero{flex-direction:column}
-  .hero-left,.hero-right{width:100%;height:50vh}
-}
-</style>
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav ul { gap: 12px; }
+            .hero { min-height: 50vh; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="container flex">
-    <strong>TechMed System</strong>
-    <nav>
-      <ul>
-        <li><a href="#empresa">Empresa</a></li>
-        <li><a href="#clientes">Clientes</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#infra">Infraestrutura</a></li>
-        <li><a href="#parcerias">Parcerias</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <header>
+        <div class="container nav-container">
+            <a href="#" onclick="showPage('home')" class="logo">TECHMED<span>SYSTEM</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Início</a></li>
+                    <li><a href="#" onclick="showPage('sobre')">Sobre Nós</a></li>
+                    <li><a href="#" onclick="showPage('tasy')">Consultoria Tasy</a></li>
+                    <li><a href="#" onclick="showPage('pixeon')">Soluções Pixeon</a></li>
+                    <li><a href="#" onclick="showPage('contato')">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="badge">Terceirização • Suporte • Segurança</div>
-    <h1>TI confiável para empresas que não podem parar</h1>
-    <p>
-      Cansado de problemas com tecnologia? Rede instável, computadores lentos,
-      falhas constantes e falta de suporte não precisam fazer parte da sua rotina.
-      Nós cuidamos da sua TI para que sua empresa opere com estabilidade e segurança.
-    </p>
-    <a class="btn" href="https://wa.me/5511988372710" target="_blank">
-      Solicitar diagnóstico gratuito
+    <div class="hero">
+        <div class="container">
+            <h1 id="hero-h1">TI Estratégica para o Setor de Saúde</h1>
+            <p id="hero-p">Nós otimizamos processos e sistemas para garantir a máxima eficiência da sua instituição.</p>
+            <a href="#" onclick="showPage('contato')" class="btn-modern">Falar com Consultor</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="sobre" class="page-content">
+            <div class="about-grid">
+                <div>
+                    <h2 style="font-size: 36px; margin-bottom: 25px;">Nós somos a TechMed System</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 20px;">Desde 2015, nós atuamos como o braço estratégico de instituições de saúde que buscam excelência operacional. Não entregamos apenas suporte técnico; nós entregamos inteligência de processo.</p>
+                    <p style="color: var(--text-dim); margin-bottom: 20px;">Nossa experiência acumulada em grandes players do mercado nos permite identificar gargalos na recepção e no faturamento que passam despercebidos por equipes internas.</p>
+                    <div class="card" style="margin-top: 30px; padding: 25px;">
+                        <h4 style="color: var(--primary);">Nossa Visão</h4>
+                        <p style="font-size: 14px;">Tornar a tecnologia invisível e eficiente, para que o foco da sua unidade seja apenas o cuidado com o paciente.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Equipe TechMed">
+                </div>
+            </div>
+        </section>
+
+        <section id="home" class="page-content active">
+            <div class="section-header">
+                <h2>Onde a sua receita escoa?</h2>
+                <p>Nós blindamos a sua porta de entrada para evitar glosas e ociosidade.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <i class="fa-solid fa-user-check"></i>
+                    <h3>Recepção Eficiente</h3>
+                    <p>Nós treinamos sua equipe para realizar o cadastro perfeito, eliminando erros de convênio na origem.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Agenda Otimizada</h3>
+                    <p>Nós configuramos sua agenda para trabalhar com capacidade máxima, sem buracos ou conflitos de horários.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Faturamento Seguro</h3>
+                    <p>Nós parametrizamos as regras de credenciamento para que cada procedimento seja cobrado corretamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tasy" class="page-content">
+            <div class="section-header">
+                <h2>Consultoria Tasy Philips</h2>
+                <p>Nós somos especialistas nos módulos operacionais e de atendimento.</p>
+            </div>
+            <div class="grid-cards">
+                <div class="card">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <h3>Treinamento de Recepção</h3>
+                    <ul>
+                        <li>Fluxos de Atendimento Ambulatorial e Emergência</li>
+                        <li>Padronização de Cadastros e Documentação</li>
+                        <li>Checklist de Elegibilidade por Convênio</li>
+                        <li>Redução Prática de Erros de Digitação</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Agenda Integrada</h3>
+                    <ul>
+                        <li>Configuração Técnica de Agendas de Exames</li>
+                        <li>Gestão de Bloqueios, Feriados e Escalas</li>
+                        <li>Parametrização de Horários Dinâmicos</li>
+                        <li>Vínculo de Salas e Equipamentos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h3>Credenciamento Técnico</h3>
+                    <ul>
+                        <li>Vínculo Médico x CBO x Especialidade</li>
+                        <li>Configuração de Tabelas (AMB, CBHPM, Próprias)</li>
+                        <li>Regras de Contrato e Vigências de Taxas</li>
+                        <li>Atributos de Procedimentos para Faturamento</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="pixeon" class="page-content">
+            <div class="about-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=800&auto=format&fit=crop" alt="Diagnóstico por Imagem">
+                </div>
+                <div>
+                    <h2 style="font-size: 32px; margin-bottom: 25px; color: var(--primary);">Soluções Pixeon</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 25px;">Nós garantimos que o fluxo de diagnóstico por imagem seja ininterrupto, integrando recepção e laudo com perfeição.</p>
+                    <div class="card">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>PACS / RIS / DICOM</h3>
+                        <ul>
+                            <li>Configuração de Workflow DICOM</li>
+                            <li>Conciliação de Exames (Worklist)</li>
+                            <li>Suporte Arya, Suite e Estações Vidi</li>
+                            <li>Monitoramento de Storage de Imagens</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="page-content">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h2 style="font-size: 36px; margin-bottom: 20px;">Prontos para organizar a casa?</h2>
+                <p style="color: var(--text-dim); margin-bottom: 40px;">Nós estamos à disposição para entender o seu cenário atual.</p>
+                <a href="https://wa.me/5511988372710" class="btn-modern">Chamar no WhatsApp Agora</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col" style="grid-column: span 1;">
+                <a href="#" class="logo">TECHMED<span>SYSTEM</span></a>
+                <p style="margin-top: 20px;">Especialistas em processos hospitalares e sistemas de gestão de imagem.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Nossas Soluções</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('tasy')">Consultoria Tasy</a></li>
+                    <li><a href="#" onclick="showPage('pixeon')">Soluções Pixeon</a></li>
+                    <li><a href="#" onclick="showPage('tasy')">Treinamento Recepção</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Empresa</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('sobre')">Sobre Nós</a></li>
+                    <li><a href="#" onclick="showPage('contato')">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Fale Conosco</h4>
+                <p><i class="fa-solid fa-phone" style="color: var(--primary);"></i> (11) 98837-2710</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> contato@techmed.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 TechMed System. Tasy e Pixeon são marcas de seus respectivos fabricantes. Atuamos de forma independente.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511988372710" class="wa-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
-  </div>
-  <div class="hero-right"></div>
-</section>
 
-<section id="empresa">
-  <div class="container content">
-    <h2>Quem Somos</h2>
-    <p>
-      A TechMed System atua desde 2015 oferecendo suporte técnico, terceirização
-      e infraestrutura de TI para empresas de diversos segmentos, incluindo
-      ambientes corporativos e hospitalares.
-    </p>
-
-    <div class="grid">
-      <div class="card"><h3>Missão</h3><p>Garantir tecnologia estável, segura e eficiente.</p></div>
-      <div class="card"><h3>Visão</h3><p>Ser referência em gestão e terceirização de TI.</p></div>
-      <div class="card"><h3>Valores</h3><p>Transparência, responsabilidade e compromisso.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="clientes" class="bg-watermark bg-servicos">
-  <div class="container content">
-    <h2>Quem Atendemos</h2>
-    <div class="grid">
-      <div class="card"><i class="fa-solid fa-hospital"></i><h3>Clínicas & Consultórios</h3><p>Ambientes médicos com necessidade de estabilidade e segurança.</p></div>
-      <div class="card"><i class="fa-solid fa-building"></i><h3>Empresas</h3><p>Pequenas e médias empresas de diversos segmentos.</p></div>
-      <div class="card"><i class="fa-solid fa-scale-balanced"></i><h3>Advocacia</h3><p>Proteção de dados e continuidade operacional.</p></div>
-      <div class="card"><i class="fa-solid fa-calculator"></i><h3>Contabilidade</h3><p>Sistemas críticos, servidores e backup confiável.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="servicos" class="bg-watermark bg-servicos">
-  <div class="container content">
-    <h2>Serviços</h2>
-    <div class="grid">
-      <div class="card"><i class="fa-solid fa-users-gear"></i><h3>Terceirização de TI</h3><p>Gestão completa do ambiente de TI.</p></div>
-      <div class="card"><i class="fa-solid fa-headset"></i><h3>Suporte Técnico</h3><p>Computadores lentos, erros e falhas.</p></div>
-      <div class="card"><i class="fa-solid fa-lock"></i><h3>Segurança</h3><p>Antivírus, firewall e proteção de dados.</p></div>
-      <div class="card"><i class="fa-solid fa-chalkboard-user"></i><h3>Treinamento TASY</h3><p>Treinamento para recepção e agendamento sem custos elevados.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="infra" class="bg-watermark bg-infra">
-  <div class="container content">
-    <h2>Infraestrutura</h2>
-    <div class="grid">
-      <div class="card"><i class="fa-solid fa-network-wired"></i><h3>Redes</h3><p>Wi-Fi e cabeamento estruturado.</p></div>
-      <div class="card"><i class="fa-solid fa-server"></i><h3>Servidores</h3><p>Windows Server e virtualização.</p></div>
-      <div class="card"><i class="fa-solid fa-images"></i><h3>PACS</h3><p>Pixeon e Carestream.</p></div>
-      <div class="card"><i class="fa-solid fa-hospital"></i><h3>TASY</h3><p>Assistencial, agendamento e suporte técnico.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="parcerias">
-  <div class="container content">
-    <h2>Parcerias & Tecnologias</h2>
-    <div class="grid">
-      <div class="card"><h3>Kaspersky</h3><p>Proteção corporativa.</p></div>
-      <div class="card"><h3>Bitdefender</h3><p>Segurança endpoint.</p></div>
-      <div class="card"><h3>Locaweb</h3><p>Cloud e e-mail corporativo.</p></div>
-      <div class="card"><h3>Sistemas Hospitalares</h3><p>Experiência prática em ambientes críticos.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="contato">
-  <div class="container content">
-    <h2>Contato</h2>
-    <p>Fale com um especialista e receba um diagnóstico inicial.</p>
-  </div>
-</section>
-
-<footer>
-© 2015 – 2025 TechMed System. Todos os direitos reservados.
-</footer>
-
-<a href="https://wa.me/5511988372710" target="_blank" class="whatsapp-float">
-<i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
-</a>
-
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            
+            const titles = {
+                'home': ['TI Estratégica para Saúde', 'Nós otimizamos processos para garantir eficiência.'],
+                'sobre': ['Nós somos a TechMed System', 'Mais de 10 anos de inteligência operacional.'],
+                'tasy': ['Consultoria Tasy Philips', 'Nós dominamos os fluxos de atendimento e agenda.'],
+                'pixeon': ['Soluções Pixeon', 'Nós garantimos a fluidez do seu fluxo DICOM/PACS.'],
+                'contato': ['Fale Conosco', 'Nossa equipe está disponível para o seu projeto.']
+            };
+            
+            document.getElementById('hero-h1').innerText = titles[pageId][0];
+            document.getElementById('hero-p').innerText = titles[pageId][1];
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
 </body>
 </html>
